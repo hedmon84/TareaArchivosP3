@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Erick Nisbeth/CLionProjects/Archivos/Notas.cpp
+Notas.h
+/cygdrive/c/Users/Erick Nisbeth/CLionProjects/Archivos/Notas.h
+fstream
+-
+iostream
+-
+cstring
+-
+
+/cygdrive/c/Users/Erick Nisbeth/CLionProjects/Archivos/Notas.h
+
+/cygdrive/c/Users/Erick Nisbeth/CLionProjects/Archivos/main.cpp
+iostream
+-
+Notas.h
+/cygdrive/c/Users/Erick Nisbeth/CLionProjects/Archivos/Notas.h
+

@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/Archivos.dir/main.cpp.o CMakeFiles/Archivos.dir/Notas.cpp.o  -o Archivos.exe -Wl,--out-implib,libArchivos.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
