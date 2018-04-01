@@ -78,8 +78,12 @@ void Notas::registroMateria() {
 
     for (int i = 0; i < cantidad; i++)
     {
-        //Pedir datos
-        writer << codigoM << ' ' << nombre << endl;
+
+        cout<<"Ingrese Codigo de Materia: ";
+        cin>> codigoM ;
+        cout<<"Ingrese Nombre de Materia: ";
+        cin>> nombre;
+        writer << codigoM << ' ' << nombre << "\n";
 
     }
 
@@ -128,6 +132,7 @@ void Notas::registrarNotas()
     do{
         char nombreM[30];
         char nombreA[50];
+        int contador = 0;
         int codigoM, codigoA, nota;
 
         do{
@@ -142,16 +147,28 @@ void Notas::registrarNotas()
             codigoA =  obtenerCodigoAlumno(nombreA);
         }while (codigoA == -1);
 
-        cout << "Ingrese Notas: ";
-        cin>>nota;
+
+         do{
+             cout << "Ingrese Notas: ";
+             cin>>nota;
+             contador++;
+         }while (contador != 1);
+
+        contador=0;
+
+
+
 
         writer << codigoM << ' ' << codigoA << ' ' << nota << "\n";
-        cout << "Desea ingresar una nueva nota ? -1 salir";
+        cout << "Desea ingresar una nueva nota 1 si ? 2 salir" <<  "\n";
         cin >> opcion;
 
-    }while (opcion != -1);
+
+
+    }while (opcion != 2);
 
     writer.close();
+
 
 
 
@@ -170,18 +187,19 @@ void Notas::consultarNotas()
     cout<< "\n\n ***CONSULTA DE NOTAS**\n\n";
     int codigoM,codigoA,nota;
     archivoNotas.seekg(0,ios::beg);
-    while (archivoNotas >> codigoM,codigoA,nota){
+    while (archivoNotas >> codigoM>>codigoA>>nota){
+
         cout << obtenerNombreMateria(codigoM) << ' ' << obtenerNombreAlummo(codigoA) << ' ' << nota << '\n';
     }
 
     archivoNotas.close();
-    return;
+
 }
 
 int Notas::obtenerCodigoAlumno(const char *nombreM)
 {
 
-    ifstream reader("materias.dat", ios::app);
+    ifstream reader("materias.dat", ios::in);
 
     if (!reader) {
         cout << "Error al intentar el archivo materias.dat\n";
@@ -193,7 +211,7 @@ int Notas::obtenerCodigoAlumno(const char *nombreM)
     char nombre[30];
 
     while (reader >> codigo >> nombre) {
-        if (strcmp(nombre, nombreM) == 0) {
+        if (strcmp(nombre, nombreM) != 0) {
             return codigo;
         }
     }
@@ -204,7 +222,7 @@ int Notas::obtenerCodigoAlumno(const char *nombreM)
 
 int Notas::obtenerCodigoMateria(const char *nombreM)
 {
-    ifstream reader("alumnos.dat", ios::app);
+    ifstream reader("alumnos.dat", ios::in);
 
     if (!reader) {
         cout << "Error al intentar el archivo materias.dat\n";
@@ -216,7 +234,7 @@ int Notas::obtenerCodigoMateria(const char *nombreM)
     char nombre[30];
 
     while (reader >> codigo >> nombre >> edad) {
-        if (strcmp(nombre, nombreM) == 0) {
+        if (strcmp(nombre, nombreM) != 0) {
             return codigo;
         }
     }
@@ -226,21 +244,20 @@ int Notas::obtenerCodigoMateria(const char *nombreM)
 
 char *Notas::obtenerNombreAlummo(const int codigoAlumno) {
 
-    ifstream archivoAlumno("alumno.dat",ios::in);
+    ifstream archivoAlumno("alumno.dat");
     if(!archivoAlumno){
         cout << "Error al intentar el archivo alumno.dat\n";
-        return NULL;
+       return NULL;
     }
     int codigo , edad;
     char nombre[50];
     archivoAlumno.seekg(0,ios::beg);
-
     while (archivoAlumno >>codigo >> nombre >> edad){
         if(codigoAlumno == codigo){
 
-            char *retorno = new char[strlen(nombre)];
+            auto *retorno = new char[strlen(nombre)];
             strcpy(retorno,nombre);
-            retorno[strlen(nombre)]= '/0';
+            retorno[strlen(nombre)]= '0';
             archivoAlumno.close();
             return retorno;
 
@@ -248,14 +265,14 @@ char *Notas::obtenerNombreAlummo(const int codigoAlumno) {
 
     }
     archivoAlumno.close();
-    return  NULL;
+    return nullptr;
 
 
 }
 
 char *Notas::obtenerNombreMateria(const int codigoMateria) {
 
-    ifstream archivoMateria("alumno.dat",ios::in);
+    ifstream archivoMateria("alumno.dat");
     if(!archivoMateria){
         cout << "Error al intentar el archivo alumno.dat\n";
         return NULL;
@@ -266,9 +283,9 @@ char *Notas::obtenerNombreMateria(const int codigoMateria) {
 
     while (archivoMateria >>codigo >> nombre){
         if(codigoMateria == codigo){
-            char *retorno = new char[strlen(nombre)];
+            auto *retorno = new char[strlen(nombre)];
             strcpy(retorno,nombre);
-            retorno[strlen(nombre)]='/0';
+            retorno[strlen(nombre)]='0';
             archivoMateria.close();
             return retorno;
 
@@ -278,7 +295,69 @@ char *Notas::obtenerNombreMateria(const int codigoMateria) {
     archivoMateria.close();
     return  NULL;
 
+}
+
+void Notas::promedioAlumno() {
+
+    ifstream promedioAL("notas.dat",ios::in);
+
+    if (!promedioAL) {
+        cout << "ERROR NOSE PUEDE ABRIR EL ARCHIVO nota.dat";
+        return;
+    }
+    promedioAL.seekg(0, ios::beg);
+    char nombreA[50];
+    int codigoM, codigoA, codigoAlumPromedio, nota, promedio, notaTotal=0, cantNota=0;
+
+    cout << "\n\n  --P R O M E D I O   D E L   A L U M N O--\n";
+
+    cout << "\nNombre del alumno: ";
+    cin >> nombreA;
+    codigoAlumPromedio = obtenerCodigoAlumno(nombreA);
+
+    while (promedioAL >> codigoM >> codigoA >> nota) {
+        if (codigoAlumPromedio == codigoA) {
+            notaTotal = notaTotal + nota;
+            cantNota++;
+        }
+    }
+    promedio = notaTotal / cantNota;
+    cout << "\nPromedio del alumno:  " << nombreA << " es " << promedio;
+
 
 
 }
 
+
+void Notas::promedioMateria() {
+
+    ifstream archivoP("notas.dat", ios::in);
+
+    if (!archivoP) {
+        cout << "ERROR NO SE PUDO ABRIR EL ARCHIVO notas.dat" << endl;
+        return;
+    }
+
+    archivoP.seekg(0, ios::beg);
+    char nombreM[30];
+    int codigoA, codigoM, nota, codigoMPromedio, notaSuma = 0, cantN = 0, promedio;
+
+    cout << "\n\n *P R O M E D I O  D E  L A S  M A T E R I A S *\n\n";
+
+    cout << "\nIngrese Materia: ";
+    cin >> nombreM;
+
+    codigoMPromedio = obtenerCodigoMateria(nombreM);
+
+    while (archivoP >> codigoM >> codigoA >> nota) {
+        if (codigoMPromedio == codigoM) {
+            notaSuma += nota;
+            cantN++;
+        }
+    }
+
+    promedio = notaSuma / cantN;
+    cout << "\nPromedio total de la clase " << nombreM << " es " << promedio;
+
+    
+}

@@ -11,7 +11,8 @@ class Notas {
 public:
 
     Notas();
-
+    static void promedioAlumno();
+    static void promedioMateria();
     static void registroAlumno();
     static void consultarAlumno();
     static void registroMateria();
