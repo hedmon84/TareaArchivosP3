@@ -16,11 +16,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Archivos.dir/Notas.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Archivos.dir/Notas.cpp.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Archivos.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Archivos.dir/main.cpp.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notas.cpp" afterPath="$PROJECT_DIR$/Notas.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notas.h" afterPath="$PROJECT_DIR$/Notas.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/alumnos.dat" afterPath="$PROJECT_DIR$/cmake-build-debug/alumnos.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/materias.dat" afterPath="$PROJECT_DIR$/cmake-build-debug/materias.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -181,12 +178,20 @@
       <workItem from="1521427405712" duration="788000" />
       <workItem from="1521478149585" duration="501000" />
       <workItem from="1521481529631" duration="876000" />
-      <workItem from="1522587938073" duration="535000" />
+      <workItem from="1522587938073" duration="565000" />
     </task>
+    <task id="LOCAL-00001" summary="ADD">
+      <created>1522588506024</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1522588506024</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37290000" />
+    <option name="totallyTimeSpent" value="37320000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -248,6 +253,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ADD" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
