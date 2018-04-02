@@ -1,4 +1,4 @@
-# Install script for directory: /cygdrive/c/Users/Erick Nisbeth/CLionProjects/Archivos
+# Install script for directory: /cygdrive/d/Archivo De Programas/JetBrains/CLion 2017.1.3/CLion Projects/Archivos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/cygdrive/c/Users/Erick Nisbeth/CLionProjects/Archivos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/cygdrive/d/Archivo De Programas/JetBrains/CLion 2017.1.3/CLion Projects/Archivos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/c/Users/Erick Nisbeth/CLionProjects/Archivos/Notas.cpp" "/cygdrive/c/Users/Erick Nisbeth/CLionProjects/Archivos/cmake-build-debug/CMakeFiles/Archivos.dir/Notas.cpp.o"
-  "/cygdrive/c/Users/Erick Nisbeth/CLionProjects/Archivos/main.cpp" "/cygdrive/c/Users/Erick Nisbeth/CLionProjects/Archivos/cmake-build-debug/CMakeFiles/Archivos.dir/main.cpp.o"
+  "/cygdrive/d/Archivo De Programas/JetBrains/CLion 2017.1.3/CLion Projects/Archivos/Notas.cpp" "/cygdrive/d/Archivo De Programas/JetBrains/CLion 2017.1.3/CLion Projects/Archivos/cmake-build-debug/CMakeFiles/Archivos.dir/Notas.cpp.o"
+  "/cygdrive/d/Archivo De Programas/JetBrains/CLion 2017.1.3/CLion Projects/Archivos/main.cpp" "/cygdrive/d/Archivo De Programas/JetBrains/CLion 2017.1.3/CLion Projects/Archivos/cmake-build-debug/CMakeFiles/Archivos.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -8,7 +8,8 @@ int main() {
    // Notas::consultarMaterias();
    //Notas::registrarNotas();
   //Notas::consultarNotas();
-    Notas::CalcularPromedio();
+   // Notas::promedioAlumno();
+    //Notas::promedioMateria();
     return 0;
 }
 
